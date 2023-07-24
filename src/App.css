@@ -1,0 +1,30 @@
+#root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.main-content {
+  padding-bottom: 3rem;
+}
+.pageFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  font-size: 12px;
+  color: #ffffff;
+}
+
+@media (min-width: 1400px) {
+  .faqs-card {
+    max-width: 50%;
+  }
+
+  .faqs {
+    display: flex;
+    justify-content: center;
+  }
+}
