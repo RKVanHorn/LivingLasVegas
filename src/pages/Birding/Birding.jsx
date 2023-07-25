@@ -55,13 +55,13 @@ export default function Birding() {
     <>
       <div className="text-center">
         <Row className="justify-content-center align-items-center px-5">
-          <Col xs={3}>
+          <Col md={3}>
             <img src="src\components\images\hummingbird.png" />
           </Col>
-          <Col xs={6}>
+          <Col s={6}>
             <h1>Birding Las Vegas</h1>
           </Col>
-          <Col xs={3}>
+          <Col md={3}>
             <img src="src\components\images\roadrunner.png" />
           </Col>
         </Row>
