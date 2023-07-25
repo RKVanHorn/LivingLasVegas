@@ -14,7 +14,7 @@ export default function BirdTable({ birds, deleteBird, updateBird }) {
         <Form>
           <Form.Group className="mb-3" controlId="birdSearch">
             <Form.Control
-              type="text"
+              type="search"
               placeholder="Search bird sightings"
               value={filtered}
               onChange={(e) => setFiltered(e.target.value)}
