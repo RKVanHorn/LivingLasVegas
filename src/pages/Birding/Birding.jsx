@@ -1,6 +1,7 @@
 import React from "react";
 import BirdTable from "./BirdTable";
 import AddBirdForm from "./AddBirdForm";
+import { Row, Col } from "react-bootstrap";
 
 export default function Birding() {
   const URL = "https://648b4e4317f1536d65eac305.mockapi.io/api/birddb";
@@ -53,7 +54,17 @@ export default function Birding() {
   return (
     <>
       <div className="text-center">
-        <h1>Birding Las Vegas</h1>
+        <Row className="justify-content-center align-items-center px-5">
+          <Col xs={3}>
+            <img src="src\components\images\hummingbird.png" />
+          </Col>
+          <Col xs={6}>
+            <h1>Birding Las Vegas</h1>
+          </Col>
+          <Col xs={3}>
+            <img src="src\components\images\roadrunner.png" />
+          </Col>
+        </Row>
         <hr></hr>
         <p>
           bird noun : any of a class (Aves) of warm-blooded vertebrates
