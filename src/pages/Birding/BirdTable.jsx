@@ -6,7 +6,7 @@ export default function BirdTable({ birds, deleteBird, updateBird }) {
   const [filtered, setFiltered] = React.useState("");
 
   return (
-    <Card className="m-3 bg-primary text-white">
+    <Card className="m-3 pt-3 bg-primary text-white">
       <Card.Header className="text-center fs-4">
         Las Vegas Bird Sightings
       </Card.Header>
