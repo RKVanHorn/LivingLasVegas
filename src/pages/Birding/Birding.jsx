@@ -54,8 +54,18 @@ export default function Birding() {
     <>
       <div className="text-center">
         <h1>Birding Las Vegas</h1>
+        <hr></hr>
         <p>
-          Have you seen a cool bird in the Vegas Valley? Add it to the list!
+          bird noun : any of a class (Aves) of warm-blooded vertebrates
+          distinguished by having the body more or less completely covered with
+          feathers and the forelimbs modified as wings
+          <br></br>
+          <br></br>
+          bird verb : to observe or identify wild birds in their habitats
+          <br></br>
+          <br></br>
+          Las Vegas is an amazing place to bird! Have you seen a cool species in
+          the Valley? Add it to the list!
         </p>
       </div>
       <AddBirdForm addNewBird={addNewBird} />
