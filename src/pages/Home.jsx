@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import ReactWeather, { useVisualCrossing } from "react-open-weather";
+
 export default function Home() {
   /**I'm using react-open-weather to embed a weather widget in
    * this page that shows the current weather in Las Vegas */
@@ -55,12 +56,12 @@ export default function Home() {
         <Row>
           <h2 className="p-3 m-3">Right now in Las Vegas:</h2>
         </Row>
-        /**Each of these cards conditionally renders depending on what season it
-        is in Las Vegas at the time the page is loaded */
+        {/* /**Each of these cards conditionally renders depending on what season it
+        is in Las Vegas at the time the page is loaded */}
         <Row className="g-3 justify-content-center">
           {season === "Winter" && (
             <Col sm={6}>
-              <Card>
+              <Card className="season-card">
                 <Card.Img
                   variant="top"
                   src="src\components\images\winter.jpg"
@@ -77,7 +78,7 @@ export default function Home() {
           )}
           {season === "Spring" && (
             <Col sm={6}>
-              <Card>
+              <Card className="season-card">
                 <Card.Img
                   variant="top"
                   src="src\components\images\spring.jpg"
@@ -94,7 +95,7 @@ export default function Home() {
           )}
           {season === "Summer" && (
             <Col sm={6}>
-              <Card>
+              <Card className="season-card">
                 <Card.Img
                   variant="top"
                   src="src\components\images\summer.jpg"
@@ -112,7 +113,7 @@ export default function Home() {
           )}
           {season === "Fall" && (
             <Col sm={6}>
-              <Card>
+              <Card className="season-card">
                 <Card.Img variant="top" src="src\components\images\fall.jpg" />
                 <Card.Body>
                   <Card.Title className="text-center">Fall</Card.Title>
@@ -126,8 +127,8 @@ export default function Home() {
             </Col>
           )}
           <Col sm={6}>
-            /**This is the component for react-open-weather
-            https://github.com/farahat80/react-open-weather */
+            {/* /**This is the component for react-open-weather
+            https://github.com/farahat80/react-open-weather */}
             <ReactWeather
               isLoading={isLoading}
               errorMessage={errorMessage}
@@ -139,8 +140,8 @@ export default function Home() {
             />
           </Col>
         </Row>
-        /**These buttons allow the user to override the season and see the
-        averages for other seasons */
+        {/* /**These buttons allow the user to override the season and see the
+        averages for other seasons */}
         <Row className="m-3">
           <hr></hr>
           <h4>Click to see another season's averages.</h4>
@@ -173,35 +174,57 @@ export default function Home() {
             Fall
           </Button>
         </Row>
-        <Row>
-          {/* <Carousel>
+        <Row className="m-5">
+          <Carousel className="animal-carousel">
             <Carousel.Item>
-              <ExampleCarouselImage text="First slide" />
+              <img
+                src="src\components\images\4fb07466aeeef139647c4d450983aff5--desert-animals-wild-animals.jpg"
+                alt="Merriam's kangaroo rat"
+              />
               <Carousel.Caption>
-                <h3>First slide label</h3>
+                <h3>Merriam's Kangaroo Rat</h3>
                 <p>
                   Nulla vitae elit libero, a pharetra augue mollis interdum.
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <ExampleCarouselImage text="Second slide" />
+              <img
+                src="src\components\images\0722_Nature_tortoise.jpg"
+                alt="Desert tortoise"
+              />
               <Carousel.Caption>
-                <h3>Second slide label</h3>
+                <h3>Desert Tortoise</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
               </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-              <ExampleCarouselImage text="Third slide" />
+              <img
+                src="src\components\images\costas.jpg"
+                alt="Costa's hummingbird"
+              />
               <Carousel.Caption>
-                <h3>Third slide label</h3>
+                <h3>Costa's Hummingbird</h3>
                 <p>
                   Praesent commodo cursus magna, vel scelerisque nisl
                   consectetur.
                 </p>
               </Carousel.Caption>
             </Carousel.Item>
-          </Carousel> */}
+            <Carousel.Item>
+              <img
+                src="src\components\images\Desert-Cottontail.jpg"
+                alt="Desert Cottontail"
+              />
+              <Carousel.Caption>
+                <h3>Desert Cottontail</h3>
+                <p>
+                  Praesent commodo cursus magna, vel scelerisque nisl
+                  consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          </Carousel>
         </Row>
       </Container>
     </>

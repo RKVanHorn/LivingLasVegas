@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
 import "./App.css";
 import Home from "./pages/Home";
 import Layout from "./components/Layout";
 import Birding from "./pages/Birding/Birding";
 import FAQs from "./pages/FAQs";
+import "bootswatch/dist/lux/bootstrap.min.css";
 
 function App() {
   return (

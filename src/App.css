@@ -18,6 +18,17 @@
   color: #ffffff;
 }
 
+.season-card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.animal-carousel img {
+  width: 100%;
+}
+.animal-carousel h3 {
+  color: white;
+}
+
 @media (min-width: 1400px) {
   .faqs-card {
     max-width: 50%;
