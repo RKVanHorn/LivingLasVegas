@@ -54,6 +54,7 @@ export default function Birding() {
   return (
     <>
       <div className="text-center">
+        <hr></hr>
         <Row className="justify-content-center align-items-center px-5">
           <Col md={3}>
             <img src="src\components\images\hummingbird.png" />
@@ -67,12 +68,12 @@ export default function Birding() {
         </Row>
         <hr></hr>
         <p>
-          bird noun : any of a class (Aves) of warm-blooded vertebrates
+          bird (noun) : any of a class (Aves) of warm-blooded vertebrates
           distinguished by having the body more or less completely covered with
           feathers and the forelimbs modified as wings
           <br></br>
           <br></br>
-          bird verb : to observe or identify wild birds in their habitats
+          bird (verb) : to observe or identify wild birds in their habitats
           <br></br>
           <br></br>
           Las Vegas is an amazing place to bird! Have you seen a cool species in

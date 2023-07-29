@@ -5,10 +5,11 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 import Form from "react-bootstrap/Form";
 import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 export default function Layout() {
   const [runConfetti, setRunConfetti] = React.useState(false);
-
+  const { width, height } = useWindowSize();
   const toggleConfetti = () => {
     setRunConfetti(!runConfetti);
   };
@@ -25,7 +26,9 @@ export default function Layout() {
           onClick={toggleConfetti}
         />
       </Form>
-      {runConfetti && <Confetti numberOfPieces={700} height={1000} />}
+      {runConfetti && (
+        <Confetti numberOfPieces={700} width={width} height={height} />
+      )}
       <main className="main-content">
         <Outlet />
       </main>
