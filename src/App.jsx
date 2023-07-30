@@ -7,6 +7,8 @@ import Birding from "./pages/Birding/Birding";
 import FAQs from "./pages/FAQs";
 import "bootswatch/dist/lux/bootstrap.min.css";
 
+/**This is where I have my routes set up */
+
 function App() {
   return (
     <BrowserRouter>

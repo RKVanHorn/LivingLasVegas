@@ -2,6 +2,11 @@ import React from "react";
 import { Card, Table, Form } from "react-bootstrap";
 import Bird from "./Bird";
 
+/**This component sets up the table on the birding page and then maps over the birds data that gets passed down from
+ * Birding.jsx. It also has a search bar that allows the user to search for any bird using words in the name, date, location
+ * or notes fields.
+ */
+
 export default function BirdTable({ birds, deleteBird, updateBird }) {
   const [filtered, setFiltered] = React.useState("");
 
@@ -11,6 +16,7 @@ export default function BirdTable({ birds, deleteBird, updateBird }) {
         Las Vegas Bird Sightings
       </Card.Header>
       <Card.Body className="table-responsive">
+        {/* The input is used to set the filtered value which is then used in the table to filter the data that is mapped */}
         <Form>
           <Form.Group className="mb-3" controlId="birdSearch">
             <Form.Control
@@ -33,6 +39,8 @@ export default function BirdTable({ birds, deleteBird, updateBird }) {
             </tr>
           </thead>
           <tbody>
+            {/* If any of the data fields for a specific bird contain the letters/words typed into the search bar they are rendered here.
+             If the search bar is empty then all birds are rendered. */}
             {birds
               .filter((bird) => {
                 if (

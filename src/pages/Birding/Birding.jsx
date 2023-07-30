@@ -3,6 +3,10 @@ import BirdTable from "./BirdTable";
 import AddBirdForm from "./AddBirdForm";
 import { Row, Col } from "react-bootstrap";
 
+/**This component organizes and renders all of the components realted to the Birding page of the app.
+ * I have used MockAPI to house my bird data as a back end and all logic for API calls are written here.
+ */
+
 export default function Birding() {
   const URL = "https://648b4e4317f1536d65eac305.mockapi.io/api/birddb";
   const [birds, setBirds] = React.useState([]);
@@ -67,7 +71,7 @@ export default function Birding() {
           </Col>
         </Row>
         <hr></hr>
-        <p>
+        <p className="mx-5">
           bird (noun) : any of a class (Aves) of warm-blooded vertebrates
           distinguished by having the body more or less completely covered with
           feathers and the forelimbs modified as wings
@@ -76,8 +80,8 @@ export default function Birding() {
           bird (verb) : to observe or identify wild birds in their habitats
           <br></br>
           <br></br>
-          Las Vegas is an amazing place to bird! Have you seen a cool species in
-          the Valley? Add it to the list!
+          LAS VEGAS IS AN AMAZING PLACE TO BIRD! HAVE YOU SEEN A COOL SPECIES IN
+          THE VALLEY? ADD IT TO THE LIST!
         </p>
       </div>
       <AddBirdForm addNewBird={addNewBird} />

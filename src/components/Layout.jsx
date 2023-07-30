@@ -7,6 +7,8 @@ import Form from "react-bootstrap/Form";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
 
+/**Everything that I want to display on all pages is rendered in the Layout component and I used Outlet to show where the rest of the components should render */
+
 export default function Layout() {
   const [runConfetti, setRunConfetti] = React.useState(false);
   const { width, height } = useWindowSize();

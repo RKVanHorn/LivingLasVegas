@@ -3,6 +3,10 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import UpdateBirdForm from "./UpdateBirdForm";
 
+/**This components creates the table row and data for each bird, it receives props from Birding.jsx
+ * and passes the updateBird function down to the UpdateBirdForm.
+ */
+
 export default function Bird({ bird, deleteBird, updateBird }) {
   const [show, setShow] = React.useState(false);
   const handleClose = () => setShow(false);

@@ -1,7 +1,10 @@
 import React from "react";
-import { Container, Nav, Navbar, Form } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 
+/**Resonsive navbar, collapses down to a hamburger menu at the medium breakpoint. I used both Nav.Link and NavLink together
+ * as a way to get the active page link to be highlighted automatically.
+ */
 export default function Navigation() {
   return (
     <Navbar bg="primary" data-bs-theme="dark" collapseOnSelect expand="md">

@@ -1,6 +1,11 @@
 import React from "react";
 import { Card, Accordion } from "react-bootstrap";
 
+/**This component houses the 10 FAQs that I had chatGPT write for me about living in Las Vegas
+ * This seemed like a great way to utilize AI to help reduce a repetitive part of my project.
+ * It is a simple card with an image and then 10 accordion items.
+ */
+
 export default function FAQs() {
   return (
     <div className="faqs">

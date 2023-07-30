@@ -1,5 +1,6 @@
 import React from "react";
 
+/**Basic footer, nothing fancy */
 export default function Footer() {
   return (
     <footer className="pageFooter bg-primary">

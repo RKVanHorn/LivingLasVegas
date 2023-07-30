@@ -2,6 +2,9 @@ import React from "react";
 import animalData from "../animalData";
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import ReactWeather, { useVisualCrossing } from "react-open-weather";
+import Places from "../components/Places";
+
+/**This is the home page component.*/
 
 export default function Home() {
   /**I'm using react-open-weather to embed a weather widget in
@@ -48,18 +51,30 @@ export default function Home() {
   return (
     <>
       <Container fluid>
-        <Row>
-          <h1 className="p-5 text-center">
-            Welcome to your guide for outdoor living in Las Vegas
-          </h1>
+        <Row className="m-3 align-items-center">
+          <Col sm={9} className="text-center p-5">
+            <h1>Welcome to your guide to outdoor living in Las Vegas</h1>
+            <p className="px-5 mt-3">
+              Do you think there isn't much to do outside of gambling in Sin
+              City? Take a look around to discover why Las Vegas is an amazing
+              outdoor recreation destination!
+            </p>
+          </Col>
+          <Col sm={3}>
+            <img
+              className="vegas-sign"
+              src="src\components\images\lasvegas.png"
+              alt="THe iconic Welcome to Las Vegas Sign"
+            />
+          </Col>
         </Row>
         <hr></hr>
         <Row>
           <h2 className="p-3 m-3">Right now in Las Vegas:</h2>
         </Row>
-        {/* /**Each of these cards conditionally renders depending on what season it
+        {/* Seasonal cards section - each conditionally renders depending on what season it
         is in Las Vegas at the time the page is loaded */}
-        <Row className="g-3 justify-content-center">
+        <Row className="g-4 justify-content-center mx-3">
           {season === "Winter" && (
             <Col sm={6}>
               <Card className="season-card">
@@ -127,9 +142,9 @@ export default function Home() {
               </Card>
             </Col>
           )}
-          <Col sm={6}>
-            {/* /**This is the component for react-open-weather
+          {/* Current weather section - utilizes the following:
             https://github.com/farahat80/react-open-weather */}
+          <Col sm={6}>
             <ReactWeather
               isLoading={isLoading}
               errorMessage={errorMessage}
@@ -141,58 +156,82 @@ export default function Home() {
             />
           </Col>
         </Row>
-        {/* /**These buttons allow the user to override the season and see the
-        averages for other seasons */}
-        <Row className="m-3">
-          <hr></hr>
-          <h4>Click to see another season's averages.</h4>
+        {/* Seasonal info section - users can click and override the conditional rendering of the season card. */}
+        <Row className="m-5">
+          <h4 className="text-center">Click to see other seasonal averages.</h4>
           <Button
             variant="info"
-            className="col col-xs-2 m-3"
+            className="col col-xs-2 m-5"
             onClick={() => setSeason("Winter")}
           >
             Winter
           </Button>
           <Button
             variant="success"
-            className="col col-xs-2 m-3"
+            className="col col-xs-2 m-5"
             onClick={() => setSeason("Spring")}
           >
             Spring
           </Button>
           <Button
             variant="danger"
-            className="col col-xs-2 m-3"
+            className="col col-xs-2 m-5"
             onClick={() => setSeason("Summer")}
           >
             Summer
           </Button>
           <Button
             variant="warning"
-            className="col col-xs-2 m-3"
+            className="col col-xs-2 m-5"
             onClick={() => setSeason("Fall")}
           >
             Fall
           </Button>
         </Row>
+        <hr></hr>
+        {/* Adventure Awaits section */}
+        <Row className="m-3 p-5 g-3 text-center justify-content-center align-items-center">
+          <Col md={8}>
+            <h2>Where should I go to enjoy the real wild side of Las Vegas?</h2>
+            <Places />
+          </Col>
+          <Col md={4}>
+            <img
+              className="adventures-image"
+              src="src\components\images\Adventure.png"
+              alt="Signpost that says Adventure Awaits"
+            ></img>
+          </Col>
+        </Row>
+        <hr></hr>
+        {/* Animal Carousel Section */}
         <Row className="m-5">
-          <Carousel className="animal-carousel">
-            {animalData.map((animal) => (
-              <Carousel.Item className="carousel-container" key={animal.id}>
-                <img
-                  src={animal.image}
-                  alt={animal.name}
-                  className="carousel-image"
-                />
-                <Carousel.Caption className="carousel-overlay">
-                  <div className="carousel-text">
-                    <h3 className="text-white">{animal.name}</h3>
-                    <p>{animal.text}</p>
-                  </div>
-                </Carousel.Caption>
-              </Carousel.Item>
-            ))}
-          </Carousel>
+          <Col sm={{ span: 8, offset: 2 }}>
+            <h2 className="text-center">
+              Meet some of the wildlife you can discover in the Mojave Desert
+            </h2>
+            <p className="text-center">
+              Hover over the image to learn about each animal.
+            </p>
+            {/* Here is where the animalData gets mapped over and rendered into individual carousel items. */}
+            <Carousel className="animal-carousel">
+              {animalData.map((animal) => (
+                <Carousel.Item className="carousel-container" key={animal.id}>
+                  <img
+                    src={animal.image}
+                    alt={animal.name}
+                    className="carousel-image"
+                  />
+                  <Carousel.Caption className="carousel-overlay">
+                    <div className="carousel-text">
+                      <h5 className="text-white">{animal.name}</h5>
+                      <p>{animal.text}</p>
+                    </div>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Col>
         </Row>
       </Container>
     </>

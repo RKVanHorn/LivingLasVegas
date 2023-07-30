@@ -1,6 +1,12 @@
 import React from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 
+/**This form is used to update a bird sighting. It takes in props from Bird.jsx and uses the data for that
+ * specific bird to populate the form with the current information. Once a user clicks to submit the form it uses updateBird to
+ * pass the updated bird object back up to Birding.jsx where it is then re-rendered in BirdTable with the updated info. Because this form is
+ * housed in a modal, it also includes the handleClose function so that when a user hits submit the modal is also closed.
+ */
+
 export default function UpdateBirdForm({ bird, updateBird, handleClose }) {
   const [updatedBird, setUpdatedBird] = React.useState(bird);
 

@@ -5,6 +5,10 @@ import tortoise from "./components/images/tortoise.jpg";
 import costa from "./components/images/costas.jpg";
 import roadrunner from "./components/images/roadrunner.jpg";
 
+/**This is where all the data for the animal carousel lives, I started out having it all written out in HTML and realized it would be easier to add/remove or update an animal here and
+ * just have the carousel component map over each animal and render it that way.
+ */
+
 export default [
   {
     id: 1,

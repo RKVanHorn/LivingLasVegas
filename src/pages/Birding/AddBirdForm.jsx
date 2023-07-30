@@ -9,6 +9,7 @@ import {
   Container,
 } from "react-bootstrap";
 
+/**This is the form to add a bird sighting to the bird sighting table. The addNewBird function is passed down as props from Birding.jsx */
 export default function AddBirdForm({ addNewBird }) {
   const [show, setShow] = React.useState(false);
   const [newBird, setNewBird] = React.useState({
@@ -18,6 +19,7 @@ export default function AddBirdForm({ addNewBird }) {
     notes: "",
   });
 
+  /**Getting the information from the form and using it to create the newBird object */
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewBird((prevData) => {
@@ -30,7 +32,10 @@ export default function AddBirdForm({ addNewBird }) {
 
   const handleSubmit = (e) => {
     e.preventDefault;
-    //console.log(newBird);
+    //console.log(newBird); - checking to make sure the newBird object was captured correctly
+
+    /**Validating that the new bird sighting includes at least a bird and a date */
+
     if (newBird.birdName === "" || newBird.date === "") {
       setShow(true);
       return;
@@ -49,6 +54,7 @@ export default function AddBirdForm({ addNewBird }) {
         Add a bird sighting
       </Card.Header>
       <Card.Body>
+        {/* This is the alert that pops up if a user has not entered a name and date at minimum */}
         <Alert
           show={show}
           variant="danger"
@@ -57,6 +63,8 @@ export default function AddBirdForm({ addNewBird }) {
         >
           You must enter a species/name AND a date to continue
         </Alert>
+
+        {/* Form and inputs - each value is controlled */}
         <Form>
           <Container>
             <Row>
