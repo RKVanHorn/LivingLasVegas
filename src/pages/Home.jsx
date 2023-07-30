@@ -1,4 +1,5 @@
 import React from "react";
+import animalData from "../animalData";
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import ReactWeather, { useVisualCrossing } from "react-open-weather";
 
@@ -176,54 +177,21 @@ export default function Home() {
         </Row>
         <Row className="m-5">
           <Carousel className="animal-carousel">
-            <Carousel.Item>
-              <img
-                src="src\components\images\4fb07466aeeef139647c4d450983aff5--desert-animals-wild-animals.jpg"
-                alt="Merriam's kangaroo rat"
-              />
-              <Carousel.Caption>
-                <h3>Merriam's Kangaroo Rat</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                src="src\components\images\0722_Nature_tortoise.jpg"
-                alt="Desert tortoise"
-              />
-              <Carousel.Caption>
-                <h3>Desert Tortoise</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                src="src\components\images\costas.jpg"
-                alt="Costa's hummingbird"
-              />
-              <Carousel.Caption>
-                <h3>Costa's Hummingbird</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                src="src\components\images\Desert-Cottontail.jpg"
-                alt="Desert Cottontail"
-              />
-              <Carousel.Caption>
-                <h3>Desert Cottontail</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
+            {animalData.map((animal) => (
+              <Carousel.Item className="carousel-container" key={animal.id}>
+                <img
+                  src={animal.image}
+                  alt={animal.name}
+                  className="carousel-image"
+                />
+                <Carousel.Caption className="carousel-overlay">
+                  <div className="carousel-text">
+                    <h3 className="text-white">{animal.name}</h3>
+                    <p>{animal.text}</p>
+                  </div>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
           </Carousel>
         </Row>
       </Container>

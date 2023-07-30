@@ -25,8 +25,27 @@
 .animal-carousel img {
   width: 100%;
 }
-.animal-carousel h3 {
+.carousel-text {
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.carousel-container:hover .carousel-overlay {
+  opacity: 0.8;
+}
+.carousel-overlay {
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: black;
 }
 
 @media (min-width: 1400px) {
