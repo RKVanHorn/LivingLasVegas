@@ -1,5 +1,11 @@
 import React from "react";
 import animalData from "../animalData";
+import sign from "../components/images/lasvegas.png";
+import adventure from "../components/images/Adventure.png";
+import summer from "../components/images/summer.jpg";
+import spring from "../components/images/spring.jpg";
+import winter from "../components/images/winter.jpg";
+import fall from "../components/images/fall.jpg";
 import { Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import ReactWeather, { useVisualCrossing } from "react-open-weather";
 import Places from "../components/Places";
@@ -63,7 +69,7 @@ export default function Home() {
           <Col sm={3}>
             <img
               className="vegas-sign"
-              src="src\components\images\lasvegas.png"
+              src={sign}
               alt="THe iconic Welcome to Las Vegas Sign"
             />
           </Col>
@@ -110,10 +116,7 @@ export default function Home() {
           {season === "Winter" && (
             <Col md={5}>
               <Card className="season-card">
-                <Card.Img
-                  variant="top"
-                  src="src\components\images\winter.jpg"
-                />
+                <Card.Img variant="top" src={winter} />
                 <Card.Body>
                   <Card.Title className="text-center">Winter</Card.Title>
                   <Card.Text>
@@ -127,10 +130,7 @@ export default function Home() {
           {season === "Spring" && (
             <Col md={5}>
               <Card className="season-card">
-                <Card.Img
-                  variant="top"
-                  src="src\components\images\spring.jpg"
-                />
+                <Card.Img variant="top" src={spring} />
                 <Card.Body>
                   <Card.Title className="text-center">Spring</Card.Title>
                   <Card.Text>
@@ -144,10 +144,7 @@ export default function Home() {
           {season === "Summer" && (
             <Col md={5}>
               <Card className="season-card">
-                <Card.Img
-                  variant="top"
-                  src="src\components\images\summer.jpg"
-                />
+                <Card.Img variant="top" src={summer} />
                 <Card.Body>
                   <Card.Title className="text-center">Summer</Card.Title>
                   <Card.Text>
@@ -162,7 +159,7 @@ export default function Home() {
           {season === "Fall" && (
             <Col md={5}>
               <Card className="season-card">
-                <Card.Img variant="top" src="src\components\images\fall.jpg" />
+                <Card.Img variant="top" src={fall} />
                 <Card.Body>
                   <Card.Title className="text-center">Fall</Card.Title>
                   <Card.Text>
@@ -198,7 +195,7 @@ export default function Home() {
           <Col md={4}>
             <img
               className="adventures-image"
-              src="src\components\images\Adventure.png"
+              src={adventure}
               alt="Signpost that says Adventure Awaits"
             ></img>
           </Col>

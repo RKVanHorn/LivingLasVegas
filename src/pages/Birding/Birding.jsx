@@ -1,4 +1,6 @@
 import React from "react";
+import hummingbird from "src/components/images/hummingbird.png";
+import roadrunner from "src/components/images/roadrunner.png";
 import BirdTable from "./BirdTable";
 import AddBirdForm from "./AddBirdForm";
 import { Row, Col } from "react-bootstrap";
@@ -61,13 +63,13 @@ export default function Birding() {
         <hr></hr>
         <Row className="justify-content-center align-items-center px-5">
           <Col md={3}>
-            <img src="src\components\images\hummingbird.png" />
+            <img src={hummingbird} />
           </Col>
           <Col s={6}>
             <h1>Birding Las Vegas</h1>
           </Col>
           <Col md={3}>
-            <img src="src\components\images\roadrunner.png" />
+            <img src={roadrunner} />
           </Col>
         </Row>
         <hr></hr>
