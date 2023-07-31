@@ -1,6 +1,6 @@
 import React from "react";
-import hummingbird from "../src/components/images/hummingbird.png";
-import roadrunner from "../src/components/images/roadrunner.png";
+import hummingbird from "../components/images/hummingbird.png";
+import roadrunner from "../components/images/roadrunner.png";
 import BirdTable from "./BirdTable";
 import AddBirdForm from "./AddBirdForm";
 import { Row, Col } from "react-bootstrap";
