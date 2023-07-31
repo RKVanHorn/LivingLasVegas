@@ -74,9 +74,41 @@ export default function Home() {
         </Row>
         {/* Seasonal cards section - each conditionally renders depending on what season it
         is in Las Vegas at the time the page is loaded */}
-        <Row className="g-4 justify-content-center mx-3">
+        <Row className="g-3 justify-content-center m-2">
+          {/* Seasonal info section - users can click and override the conditional rendering of the season card. */}
+          <Col className="p-3" md={2}>
+            <h5>Click to see other seasonal averages.</h5>
+            <Button
+              variant="info"
+              className="col col-xs-3 m-2"
+              onClick={() => setSeason("Winter")}
+            >
+              Winter
+            </Button>
+            <Button
+              variant="success"
+              className="col col-xs-3  m-2"
+              onClick={() => setSeason("Spring")}
+            >
+              Spring
+            </Button>
+            <Button
+              variant="danger"
+              className="col col-xs-3  m-2"
+              onClick={() => setSeason("Summer")}
+            >
+              Summer
+            </Button>
+            <Button
+              variant="warning"
+              className="col col-xs-3  m-2"
+              onClick={() => setSeason("Fall")}
+            >
+              Fall
+            </Button>
+          </Col>
           {season === "Winter" && (
-            <Col sm={6}>
+            <Col md={5}>
               <Card className="season-card">
                 <Card.Img
                   variant="top"
@@ -93,7 +125,7 @@ export default function Home() {
             </Col>
           )}
           {season === "Spring" && (
-            <Col sm={6}>
+            <Col md={5}>
               <Card className="season-card">
                 <Card.Img
                   variant="top"
@@ -110,7 +142,7 @@ export default function Home() {
             </Col>
           )}
           {season === "Summer" && (
-            <Col sm={6}>
+            <Col md={5}>
               <Card className="season-card">
                 <Card.Img
                   variant="top"
@@ -128,7 +160,7 @@ export default function Home() {
             </Col>
           )}
           {season === "Fall" && (
-            <Col sm={6}>
+            <Col md={5}>
               <Card className="season-card">
                 <Card.Img variant="top" src="src\components\images\fall.jpg" />
                 <Card.Body>
@@ -144,7 +176,7 @@ export default function Home() {
           )}
           {/* Current weather section - utilizes the following:
             https://github.com/farahat80/react-open-weather */}
-          <Col sm={6}>
+          <Col md={5} className="mb-3">
             <ReactWeather
               isLoading={isLoading}
               errorMessage={errorMessage}
@@ -155,38 +187,6 @@ export default function Home() {
               showForecast
             />
           </Col>
-        </Row>
-        {/* Seasonal info section - users can click and override the conditional rendering of the season card. */}
-        <Row className="m-5">
-          <h4 className="text-center">Click to see other seasonal averages.</h4>
-          <Button
-            variant="info"
-            className="col col-xs-2 m-5"
-            onClick={() => setSeason("Winter")}
-          >
-            Winter
-          </Button>
-          <Button
-            variant="success"
-            className="col col-xs-2 m-5"
-            onClick={() => setSeason("Spring")}
-          >
-            Spring
-          </Button>
-          <Button
-            variant="danger"
-            className="col col-xs-2 m-5"
-            onClick={() => setSeason("Summer")}
-          >
-            Summer
-          </Button>
-          <Button
-            variant="warning"
-            className="col col-xs-2 m-5"
-            onClick={() => setSeason("Fall")}
-          >
-            Fall
-          </Button>
         </Row>
         <hr></hr>
         {/* Adventure Awaits section */}
