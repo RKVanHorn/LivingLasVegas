@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <>
-      <Container fluid>
+      <Container>
         <Row className="m-3 align-items-center">
           <Col sm={9} className="text-center p-5">
             <h1>Welcome to your guide to outdoor living in Las Vegas</h1>
@@ -82,7 +82,7 @@ export default function Home() {
         is in Las Vegas at the time the page is loaded */}
         <Row className="g-3 justify-content-center m-2">
           {/* Seasonal info section - users can click and override the conditional rendering of the season card. */}
-          <Col className="p-3" md={2}>
+          <Col className="p-3 text-center" lg={2}>
             <h5>Click to see other seasonal averages.</h5>
             <Button
               variant="info"
@@ -114,7 +114,7 @@ export default function Home() {
             </Button>
           </Col>
           {season === "Winter" && (
-            <Col md={5}>
+            <Col lg={5}>
               <Card className="season-card">
                 <Card.Img variant="top" src={winter} />
                 <Card.Body>
@@ -128,7 +128,7 @@ export default function Home() {
             </Col>
           )}
           {season === "Spring" && (
-            <Col md={5}>
+            <Col lg={5}>
               <Card className="season-card">
                 <Card.Img variant="top" src={spring} />
                 <Card.Body>
@@ -142,7 +142,7 @@ export default function Home() {
             </Col>
           )}
           {season === "Summer" && (
-            <Col md={5}>
+            <Col lg={5}>
               <Card className="season-card">
                 <Card.Img variant="top" src={summer} />
                 <Card.Body>
@@ -157,7 +157,7 @@ export default function Home() {
             </Col>
           )}
           {season === "Fall" && (
-            <Col md={5}>
+            <Col lg={5}>
               <Card className="season-card">
                 <Card.Img variant="top" src={fall} />
                 <Card.Body>
@@ -173,7 +173,7 @@ export default function Home() {
           )}
           {/* Current weather section - utilizes the following:
             https://github.com/farahat80/react-open-weather */}
-          <Col md={5} className="mb-3">
+          <Col lg={5} className="mb-3">
             <ReactWeather
               isLoading={isLoading}
               errorMessage={errorMessage}

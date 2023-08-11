@@ -3,7 +3,7 @@ import hummingbird from "./hummingbird.png";
 import roadrunner from "./roadrunner.png";
 import BirdTable from "./BirdTable";
 import AddBirdForm from "./AddBirdForm";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 
 /**This component organizes and renders all of the components realted to the Birding page of the app.
  * I have used MockAPI to house my bird data as a back end and all logic for API calls are written here.
@@ -58,7 +58,7 @@ export default function Birding() {
   };
 
   return (
-    <>
+    <Container>
       <div className="text-center">
         <hr></hr>
         <Row className="justify-content-center align-items-center px-5">
@@ -92,6 +92,6 @@ export default function Birding() {
         deleteBird={deleteBird}
         updateBird={updateBird}
       />
-    </>
+    </Container>
   );
 }
